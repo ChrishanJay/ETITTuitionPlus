@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Tuition Plus</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="smart_pay">SMART PAY</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="fab">FAB</string>
+    <string name="menu01">Scan QR</string>
+    <string name="menu02">Search</string>
+    <string name="menu03">Profile</string>
+    <string name="menu04">Referrals</string>
+    <string name="menu05">Discounts</string>
+    <string name="tuition_plus">Tuition Plus</string>
+</resources>
