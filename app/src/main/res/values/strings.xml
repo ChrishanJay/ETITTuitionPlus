@@ -15,4 +15,27 @@
     <string name="menu04">Referrals</string>
     <string name="menu05">Discounts</string>
     <string name="tuition_plus">Tuition Plus</string>
+    <string name="enroll">Enroll</string>
+    <string name="tutor">Tutor</string>
+    <string name="location">Location</string>
+    <string name="time">Time</string>
+    <string name="fee">Class Fee</string>
+    <string name="discount_code">Discount Code</string>
+    <string name="apply_discount">Apply</string>
+    <string name="checking_payment_info">Checking Payment Info</string>
+    <string name="home_verbiage">Following are your upcoming classes</string>
+    <string name="final_due_amount">Final Due Amount</string>
+    <string name="no_discount">No discount available for the class</string>
+    <string name="cancel">Cancel</string>
+    <string name="anka_qr">Pay Using Lanka QR</string>
+    <string name="amex">Pay Using AMEX</string>
+    <string name="visa">Pay Using Visa</string>
+    <string name="ez_cash">Pay Using Ez Cash</string>
+    <string name="card_number">Card Number</string>
+    <string name="name_on_the_card">Name on the Card</string>
+    <string name="cvv">CVV</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="amount_payable">Amount Payable</string>
+    <string name="pay">PAY</string>
 </resources>

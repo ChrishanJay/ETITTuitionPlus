@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.etit.smartpay">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.etit.smartpay" >
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="true"
@@ -8,19 +23,30 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ETITSmartPay">
+        android:theme="@style/Theme.ETITSmartPay" >
+        <activity
+            android:name=".ui.enroll.EnrollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.payment.CardPaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.enroll.DiscountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.qr.QRScanActivity"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="true"
-            android:label="@string/app_name" />
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.ETITSmartPay.NoActionBar"/>
+            android:theme="@style/Theme.ETITSmartPay.NoActionBar" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.ETITSmartPay.NoActionBar">
+            android:theme="@style/Theme.ETITSmartPay.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

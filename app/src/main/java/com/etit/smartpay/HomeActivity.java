@@ -1,13 +1,22 @@
 package com.etit.smartpay;
 
+import android.Manifest;
 import android.animation.Animator;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.etit.smartpay.model.User;
+import com.etit.smartpay.ui.qr.QRScanActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -15,32 +24,39 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.etit.smartpay.databinding.ActivityHomeBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity
+        implements ActivityCompat.OnRequestPermissionsResultCallback {
 
-    private ActivityHomeBinding binding;
+    private static final int PERMISSION_REQUEST_CAMERA = 0;
 
     FloatingActionButton fab, fab1, fab2, fab3, fab4, fab5;
     LinearLayout fabLayout1, fabLayout2, fabLayout3, fabLayout4, fabLayout5;
     boolean isFABOpen = false;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_home);
 
-        fabLayout1 = (LinearLayout) findViewById(R.id.fabLayout1);
-        fabLayout2 = (LinearLayout) findViewById(R.id.fabLayout2);
-        fabLayout3 = (LinearLayout) findViewById(R.id.fabLayout3);
-        fabLayout4 = (LinearLayout) findViewById(R.id.fabLayout4);
-        fabLayout5 = (LinearLayout) findViewById(R.id.fabLayout5);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
-        fab3 = (FloatingActionButton) findViewById(R.id.fab3);
-        fab4 = (FloatingActionButton) findViewById(R.id.fab4);
-        fab5 = (FloatingActionButton) findViewById(R.id.fab5);
+        user = User.getInstance();
+        TextView greeting = findViewById(R.id.txtGreeting);
+
+        greeting.setText(String.format("Greetings, %s %s", user.getFirstName(), user.getLastName()));
+
+        fabLayout1 = findViewById(R.id.fabLayout1);
+        fabLayout2 = findViewById(R.id.fabLayout2);
+        fabLayout3 = findViewById(R.id.fabLayout3);
+        fabLayout4 = findViewById(R.id.fabLayout4);
+        fabLayout5 = findViewById(R.id.fabLayout5);
+        fab = findViewById(R.id.fab);
+        fab1 = findViewById(R.id.fab1);
+        fab2 = findViewById(R.id.fab2);
+        fab3 = findViewById(R.id.fab3);
+        fab4 = findViewById(R.id.fab4);
+        fab5 = findViewById(R.id.fab5);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,15 +69,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-//        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-//                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-//                .build();
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_home);
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-//        NavigationUI.setupWithNavController(binding.navView, navController);
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCameraPreview();
+            }
+        });
     }
 
     private void showFABMenu() {
@@ -116,4 +129,34 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    private void startCamera() {
+        Intent intent = new Intent(this, QRScanActivity.class);
+        startActivity(intent);
+    }
+
+    private void showCameraPreview() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+                == PackageManager.PERMISSION_GRANTED) {
+            startCamera();
+        } else {
+            requestCameraPermission();
+        }
+    }
+
+    private void requestCameraPermission() {
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.CAMERA}, PERMISSION_REQUEST_CAMERA);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST_CAMERA) {
+            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                startCamera();
+            } else {
+                Toast.makeText(getApplicationContext(), "Camera Access Needed for the QR Scan Function", Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 }

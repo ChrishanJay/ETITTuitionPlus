@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "username": "Chrishan",
+    "password": "12341234",
+    "firstName": "Chrishan",
+    "lastName": "Jayakody",
+    "parentName": "Jagath Wickramarathne",
+    "parentPhone": "+94718070972",
+    "parentEmail": "jagath.w@sliit.lk"
+  },
+  {
+    "id": 2,
+    "username": "Chris",
+    "password": "1234",
+    "firstName": "Chrishan",
+    "lastName": "Jayakody",
+    "parentName": "Chrishan Jayakody",
+    "parentPhone": "+94714773127",
+    "parentEmail": "chrishan1989@gmail.com"
+  },
+  {
+    "id": 3,
+    "username": "bezkoder",
+    "password": "26",
+    "firstName": "26",
+    "lastName": "26",
+    "parentName": "26",
+    "parentPhone": "26",
+    "parentEmail": "26"
+  },
+  {
+    "id": 4,
+    "username": "bezkoder",
+    "password": "26",
+    "firstName": "26",
+    "lastName": "26",
+    "parentName": "26",
+    "parentPhone": "26",
+    "parentEmail": "26"
+  },
+  {
+    "id": 5,
+    "username": "bezkoder",
+    "password": "26",
+    "firstName": "26",
+    "lastName": "26",
+    "parentName": "26",
+    "parentPhone": "26",
+    "parentEmail": "26"
+  },
+  {
+    "id": 6,
+    "username": "bezkoder",
+    "password": "26",
+    "firstName": "26",
+    "lastName": "26",
+    "parentName": "26",
+    "parentPhone": "26",
+    "parentEmail": "26"
+  }
+]
