@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "className": "Combined Maths 2022 A/Ls",
+    "tutor": "Dushyantha Mahabaduge",
+    "location": "SyZyGy Nugegoda",
+    "time": "27th March 2022 10.30am",
+    "classFee": "500 LKR",
+    "image": "1.jpeg",
+    "online": false
+  },
+  {
+    "id": 2,
+    "className": "A/L Chemistry 2023",
+    "tutor": "Anushka Indunil",
+    "location": "Zoom Online",
+    "time": "27th April 2022 10.30am",
+    "classFee": "500 LKR",
+    "image": "2.jpeg",
+    "online": true
+  },
+  {
+    "id": 3,
+    "className": "A/L Economics 2023",
+    "tutor": "Sanira Waas",
+    "location": "Zoom Online",
+    "time": "01st May 2022 03.30pm",
+    "classFee": "500 LKR",
+    "image": "3.jpeg",
+    "online": true
+  },
+  {
+    "id": 4,
+    "className": "A/L Biology 2023 English Medium",
+    "tutor": "Muditha Dissanayake",
+    "location": "Zoom Online",
+    "time": "05th May 2022 08.30am",
+    "classFee": "1000 LKR",
+    "image": "4.jpeg",
+    "online": false
+  },
+  {
+    "id": 5,
+    "className": "A/L Physics 2023 Free Session",
+    "tutor": "Nayanajith Rathnayake",
+    "location": "Zoom Online",
+    "time": "10th May 2022 08.30am",
+    "classFee": "0 LKR",
+    "image": "5.jpeg",
+    "online": true
+  },
+  {
+    "id": 6,
+    "className": "2023 A/L ICT Theory",
+    "tutor": "Bhanuka Ekanayake",
+    "location": "Sisulka Rathnapura",
+    "time": "02nd May 2022 08.30am",
+    "classFee": "500 LKR",
+    "image": "6.jpeg",
+    "online": true
+  }
+]

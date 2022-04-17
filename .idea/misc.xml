@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable-anydpi/ic_profile.xml" value="0.294" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3963541666666667" />
         <entry key="app/src/main/res/layout/activity_card_payment.xml" value="0.35054347826086957" />
+        <entry key="app/src/main/res/layout/activity_discount.xml" value="0.30480072463768115" />
         <entry key="app/src/main/res/layout/activity_enroll.xml" value="0.35054347826086957" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.3802083333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3802083333333333" />
@@ -14,6 +15,7 @@
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.3802083333333333" />
         <entry key="app/src/main/res/layout/bottom_sheet_dialog.xml" value="0.35054347826086957" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3802083333333333" />
+        <entry key="app/src/main/res/layout/item_tuition.xml" value="0.30480072463768115" />
       </map>
     </option>
   </component>

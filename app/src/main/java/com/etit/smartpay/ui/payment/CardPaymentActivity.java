@@ -20,6 +20,7 @@ public class CardPaymentActivity extends AppCompatActivity {
     TextView amountTxt;
     EditText cardNumber, cardName, cvv, month, year;
     ProgressDialog dialog;
+    String className;
 
 
     @Override
@@ -37,6 +38,7 @@ public class CardPaymentActivity extends AppCompatActivity {
         boolean hasData = getIntent().hasExtra("data");
         if (hasData) {
             String amount = getIntent().getStringExtra("data");
+            className = getIntent().getStringExtra("className");
             amountTxt.setText(amount);
         }
 
@@ -86,6 +88,7 @@ public class CardPaymentActivity extends AppCompatActivity {
 
     private void openEnrollActivity() {
         Intent intent = new Intent(CardPaymentActivity.this, EnrollActivity.class);
+        intent.putExtra("className", className);
         startActivity(intent);
         finish();
     }

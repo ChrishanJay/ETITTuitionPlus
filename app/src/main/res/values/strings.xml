@@ -38,4 +38,6 @@
     <string name="year">Year</string>
     <string name="amount_payable">Amount Payable</string>
     <string name="pay">PAY</string>
+    <string name="class_verbiage">Following are the your class materials given by the lecturer</string>
+    <string name="class_image">Class Image</string>
 </resources>

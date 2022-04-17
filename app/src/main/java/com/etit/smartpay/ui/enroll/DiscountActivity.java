@@ -21,7 +21,7 @@ public class DiscountActivity extends AppCompatActivity {
     TextView btnEnroll, btnCancel;
     private User user;
 
-    TextView finalPayment, discount;
+    TextView finalPayment, discount, className;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class DiscountActivity extends AppCompatActivity {
 
         btnEnroll = findViewById(R.id.btnEnroll);
         btnCancel = findViewById(R.id.btnCancel);
-        TextView className = findViewById(R.id.className);
+        className = findViewById(R.id.className);
         TextView tutorName = findViewById(R.id.tutor);
         TextView location = findViewById(R.id.location);
         TextView time = findViewById(R.id.time);
@@ -93,7 +93,8 @@ public class DiscountActivity extends AppCompatActivity {
     }
 
     private void enrollStudent(){
-
+        Intent intent = new Intent(DiscountActivity.this, EnrollActivity.class);
+        startActivity(intent);
     }
 
     private void showBottomSheetDialog() {
@@ -126,6 +127,7 @@ public class DiscountActivity extends AppCompatActivity {
     private void openPaymentView() {
         Intent intent = new Intent(DiscountActivity.this, CardPaymentActivity.class);
         intent.putExtra("data", finalPayment.getText().toString());
+        intent.putExtra("className", className.getText().toString());
         startActivity(intent);
     }
 

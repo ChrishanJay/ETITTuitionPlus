@@ -5,26 +5,31 @@ import android.animation.Animator;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.etit.smartpay.adapters.ClassAdapter;
+import com.etit.smartpay.model.TuitionClass;
 import com.etit.smartpay.model.User;
 import com.etit.smartpay.ui.qr.QRScanActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.etit.smartpay.utils.Utils;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.etit.smartpay.databinding.ActivityHomeBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity
         implements ActivityCompat.OnRequestPermissionsResultCallback {
@@ -35,14 +40,21 @@ public class HomeActivity extends AppCompatActivity
     LinearLayout fabLayout1, fabLayout2, fabLayout3, fabLayout4, fabLayout5;
     boolean isFABOpen = false;
     private User user;
+    List<TuitionClass> classes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        classes = getClasses();
         user = User.getInstance();
         TextView greeting = findViewById(R.id.txtGreeting);
+        RecyclerView rvClasses = (RecyclerView) findViewById(R.id.homeList);
+
+        ClassAdapter adapter = new ClassAdapter(classes);
+        rvClasses.setAdapter(adapter);
+        rvClasses.setLayoutManager(new LinearLayoutManager(this));
 
         greeting.setText(String.format("Greetings, %s %s", user.getFirstName(), user.getLastName()));
 
@@ -77,6 +89,14 @@ public class HomeActivity extends AppCompatActivity
         });
     }
 
+    private List<TuitionClass> getClasses() {
+        String jsonFileString = Utils.getJsonFromAssets(getApplicationContext(), "classes.json");
+        Log.i("ETIT", jsonFileString);
+        Gson gson = new Gson();
+        Type listUserType = new TypeToken<List<TuitionClass>>() { }.getType();
+        List<TuitionClass> classes = gson.fromJson(jsonFileString, listUserType);
+        return classes;
+    }
     private void showFABMenu() {
         isFABOpen = true;
         fabLayout1.setVisibility(View.VISIBLE);
