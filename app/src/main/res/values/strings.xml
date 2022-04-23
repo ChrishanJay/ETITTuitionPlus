@@ -40,4 +40,16 @@
     <string name="pay">PAY</string>
     <string name="class_verbiage">Following are the your class materials given by the lecturer</string>
     <string name="class_image">Class Image</string>
+    <string name="search_text">Search for a Class</string>
+    <string name="name">Student Name:</string>
+    <string name="firstName">First Name:</string>
+    <string name="lastName">Last Name:</string>
+    <string name="userName">Username:</string>
+    <string name="parentName">Parent Name:</string>
+    <string name="parentPhone">Parent Phone:</string>
+    <string name="parentEmail">Parent Email:</string>
+    <string name="profile">Student Profile</string>
+    <string name="search">Search Class</string>
+    <string name="referral">Refer a Student</string>
+    <string name="referName">Reffering Friend Name</string>
 </resources>

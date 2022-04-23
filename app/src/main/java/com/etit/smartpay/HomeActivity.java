@@ -14,7 +14,10 @@ import android.widget.Toast;
 import com.etit.smartpay.adapters.ClassAdapter;
 import com.etit.smartpay.model.TuitionClass;
 import com.etit.smartpay.model.User;
+import com.etit.smartpay.ui.profile.ProfileActivity;
 import com.etit.smartpay.ui.qr.QRScanActivity;
+import com.etit.smartpay.ui.referrals.RefferalsActivity;
+import com.etit.smartpay.ui.search.SearchActivity;
 import com.etit.smartpay.utils.Utils;
 
 import androidx.annotation.NonNull;
@@ -87,6 +90,34 @@ public class HomeActivity extends AppCompatActivity
                 showCameraPreview();
             }
         });
+
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startSearch();
+            }
+        });
+
+        fab3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startProfile();
+            }
+        });
+
+        fab4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startReferrals();
+            }
+        });
+
+        fab5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startDiscounts();
+            }
+        });
     }
 
     private List<TuitionClass> getClasses() {
@@ -97,6 +128,8 @@ public class HomeActivity extends AppCompatActivity
         List<TuitionClass> classes = gson.fromJson(jsonFileString, listUserType);
         return classes;
     }
+
+
     private void showFABMenu() {
         isFABOpen = true;
         fabLayout1.setVisibility(View.VISIBLE);
@@ -150,6 +183,26 @@ public class HomeActivity extends AppCompatActivity
     }
 
     private void startCamera() {
+        Intent intent = new Intent(this, QRScanActivity.class);
+        startActivity(intent);
+    }
+
+    private void startSearch() {
+        Intent intent = new Intent(this, SearchActivity.class);
+        startActivity(intent);
+    }
+
+    private void startProfile() {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    private void startReferrals() {
+        Intent intent = new Intent(this, RefferalsActivity.class);
+        startActivity(intent);
+    }
+
+    private void startDiscounts() {
         Intent intent = new Intent(this, QRScanActivity.class);
         startActivity(intent);
     }
