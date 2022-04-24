@@ -44,7 +44,6 @@ public class EnrollActivity extends AppCompatActivity {
         viewModel.getSMSResponseObserver().observe(this, new Observer<SMSResponse>() {
             @Override
             public void onChanged(SMSResponse smsResponse) {
-                if (smsResponse != null) {
                     if (dialog != null) {
                         dialog.dismiss();
                     }
@@ -52,9 +51,13 @@ public class EnrollActivity extends AppCompatActivity {
                     new AlertDialog.Builder(EnrollActivity.this)
                             .setTitle("Notified Successfully")
                             .setMessage("Your Parent's have been notified via SMS and email.")
-                            .setPositiveButton(android.R.string.ok, null)
+                            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    layout.setVisibility(View.VISIBLE);
+                                }
+                            })
                             .show();
-                }
             }
         });
 
