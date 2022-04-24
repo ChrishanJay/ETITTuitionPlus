@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.referrals.RefferalsActivity">
+    android:background="#C7E3E6"
+    tools:context=".ui.referrals.ReferralsActivity">
 
     <LinearLayout
-        android:id="@+id/firstNameLayer"
+        android:id="@+id/nameLayer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -18,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="125dp"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:text="@string/referName"
             android:textSize="16sp" />
@@ -28,12 +29,132 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            tools:text="Dushyantha"
-            android:labelFor="@id/first_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:labelFor="@id/refer_name"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName" />
+            tools:text="Dushyantha" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/numberLayer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameLayer">
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="@string/referNo"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/refer_no"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:labelFor="@id/refer_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="0714773128" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/subjectLayer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numberLayer">
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="@string/referSubject"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/refer_subject"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:labelFor="@id/refer_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Chemistry" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/yearLayer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subjectLayer">
+
+        <TextView
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:text="@string/referYear"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/refer_year"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:labelFor="@id/refer_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="2023" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/submitLayer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/black"
+            android:gravity="center|center_horizontal"
+            android:text="@string/submit"
+            android:textAllCaps="true"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/btnCancel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,9 +14,11 @@ import android.widget.Toast;
 import com.etit.smartpay.adapters.ClassAdapter;
 import com.etit.smartpay.model.TuitionClass;
 import com.etit.smartpay.model.User;
+import com.etit.smartpay.ui.enroll.DiscountActivity;
 import com.etit.smartpay.ui.profile.ProfileActivity;
 import com.etit.smartpay.ui.qr.QRScanActivity;
-import com.etit.smartpay.ui.referrals.RefferalsActivity;
+import com.etit.smartpay.ui.referrals.ReferralsActivity;
+import com.etit.smartpay.ui.relief.ReliefRequestActivity;
 import com.etit.smartpay.ui.search.SearchActivity;
 import com.etit.smartpay.utils.Utils;
 
@@ -31,7 +33,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity
@@ -183,27 +184,32 @@ public class HomeActivity extends AppCompatActivity
     }
 
     private void startCamera() {
+        closeFABMenu();
         Intent intent = new Intent(this, QRScanActivity.class);
         startActivity(intent);
     }
 
     private void startSearch() {
+        closeFABMenu();
         Intent intent = new Intent(this, SearchActivity.class);
         startActivity(intent);
     }
 
     private void startProfile() {
+        closeFABMenu();
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 
     private void startReferrals() {
-        Intent intent = new Intent(this, RefferalsActivity.class);
+        closeFABMenu();
+        Intent intent = new Intent(this, ReferralsActivity.class);
         startActivity(intent);
     }
 
     private void startDiscounts() {
-        Intent intent = new Intent(this, QRScanActivity.class);
+        closeFABMenu();
+        Intent intent = new Intent(this, ReliefRequestActivity.class);
         startActivity(intent);
     }
 

@@ -52,4 +52,14 @@
     <string name="search">Search Class</string>
     <string name="referral">Refer a Student</string>
     <string name="referName">Reffering Friend Name</string>
+    <string name="referNo">Reffering Friend Number</string>
+    <string name="referSubject">Subject Reffering for</string>
+    <string name="referYear">Year Reffering for</string>
+    <string name="submit">Submit Student</string>
+    <string name="discount">Request for a Relief</string>
+    <string name="reliefReason">Reason for the request</string>
+    <string name="extraDetails">Extra Details</string>
+    <string name="attach">Attach Documents</string>
+    <string name="support_documents">Support Documents</string>
+    <string name="submitRequest">Submit Request</string>
 </resources>

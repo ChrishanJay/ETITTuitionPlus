@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CCF5FA"
     tools:context=".ui.profile.ProfileActivity">
 
     <LinearLayout
@@ -28,9 +29,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="Dushyantha"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Dushyantha" />
     </LinearLayout>
 
     <LinearLayout
@@ -55,9 +56,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="Mahabaduge"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Mahabaduge" />
     </LinearLayout>
 
     <LinearLayout
@@ -82,9 +83,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="Dushyantha"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Dushyantha" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,9 +110,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="Dushyantha"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Dushyantha" />
     </LinearLayout>
 
     <LinearLayout
@@ -136,9 +137,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="+94 71 477 3127"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="+94 71 477 3127" />
     </LinearLayout>
 
     <LinearLayout
@@ -163,9 +164,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="abc@abc.com"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="abc@abc.com" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

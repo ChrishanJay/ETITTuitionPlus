@@ -25,17 +25,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ETITSmartPay">
         <activity
-            android:name=".ui.referrals.RefferalsActivity"
-            android:label="@string/referral"
+            android:name=".ui.relief.ReliefRequestActivity"
+            android:label="@string/discount"
             android:exported="false" />
+        <activity
+            android:name=".ui.referrals.ReferralsActivity"
+            android:exported="false"
+            android:label="@string/referral" />
         <activity
             android:name=".ui.profile.ProfileActivity"
-            android:label="@string/profile"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/profile" />
         <activity
             android:name=".ui.search.SearchActivity"
-            android:label="@string/search"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/search" />
         <activity
             android:name=".ui.enroll.EnrollActivity"
             android:exported="false" />
